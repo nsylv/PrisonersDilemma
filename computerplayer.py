@@ -1,5 +1,3 @@
-from validstrategies import *
-
 '''Player controlled by the computer
 
 Holds all of the potential computer strategies,
