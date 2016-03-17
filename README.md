@@ -23,7 +23,7 @@ The generalized form of the possible outcomes is as follows (where `T > P > R > 
 In the Wikipedia example, `T = 3, P = 2, R = 1, and S = 0`.
 
 ##Testing Strategies
-There are several strategies that can be employed while playing this game.  In [computerplayer.py][computerplayer.py] you can see their logic.  Here is a brief summary:
+There are several strategies that can be employed while playing this game.  In [computerplayer.py](computerplayer.py) you can see their logic.  Here is a brief summary:
 * random ~ randomly selects to betray or stay silent
 * tit for tat ~ responds with the opponent's last move (starts off by staying silent)
 * always silent ~ always stays silent
@@ -53,7 +53,7 @@ I compared each of these strategies, finding out (using `T = 3, P = 2, R = 1, an
 |TitForTat    | AlwaysBetray | 2.00001 | 1.99998 | 0/100000      | 99999/100000  | 1/100000      | 1/100000      | 0/100000      |
 |AlwaysBetray | AlwaysSilent | 0.0     | 3.0     | 0/100000      | 0/100000      | 100000/100000 | 0/100000      | 100000/100000 |
 
-Additionally, I looked at what using different strategies looked like without factoring in what the second strategy was.  In this analysis, I computed:
+Additionally, I looked at what using different strategies looked like without factoring in what the second strategy was.  In this analysis, I computed (using `T = 3, P = 2, R = 1, and S = 0`):
 * Average for Using ~ average sentence term for using the given strategy
 * Average for Against ~ average sentence term for playing against the given strategy
 * Total Average ~ average sentence of the players for at least one of them using the given strategy
