@@ -265,8 +265,27 @@ class Game:
 
         print '\n\n'
         print 'Sentence lengths for playing with and against certain strategies'
-        headers = ['Strat','Average for Using','Total Sent/Trials','Average for Against','Total Sent/Trials','Total Average']
-        rows = [[strat,float(sentences_for_strat[strat][0])/sentences_for_strat[strat][1],'{}/{}'.format(sentences_for_strat[strat][0],sentences_for_strat[strat][1]),float(sentences_for_strat[strat][2])/sentences_for_strat[strat][1],'{}/{}'.format(sentences_for_strat[strat][2],sentences_for_strat[strat][1]),(sentences_for_strat[strat][0]+sentences_for_strat[strat][2])/(sentences_for_strat[strat][1] * 2.)] for strat in sentences_for_strat.keys()]
+##        headers = ['Strat','Average for Using','Total Sent/Trials','Average for Against','Total Sent/Trials','Total Average']
+        headers = ['Strat','Average for Using','Average for Against','Total Average','Cum Average']
+##        rows = [[strat,float(sentences_for_strat[strat][0])/sentences_for_strat[strat][1],'{}/{}'.format(sentences_for_strat[strat][0],sentences_for_strat[strat][1]),float(sentences_for_strat[strat][2])/sentences_for_strat[strat][1],'{}/{}'.format(sentences_for_strat[strat][2],sentences_for_strat[strat][1]),(sentences_for_strat[strat][0]+sentences_for_strat[strat][2])/(sentences_for_strat[strat][1] * 2.)] for strat in sentences_for_strat.keys()]
+        rows = [[strat,float(sentences_for_strat[strat][0])/sentences_for_strat[strat][1],float(sentences_for_strat[strat][2])/sentences_for_strat[strat][1],(sentences_for_strat[strat][0]+sentences_for_strat[strat][2])/(sentences_for_strat[strat][1] * 2.),float(sentences_for_strat[strat][0]+sentences_for_strat[strat][2])/sentences_for_strat[strat][1]] for strat in sentences_for_strat.keys()]
+
+##        #Sort by average for using
+##        print 'Sorted by average for using'
+##        rows = sorted(rows,key=lambda x: x[1],reverse=False)
+##
+##        #Sort by average for against
+##        print 'Sorted by average for against'
+##        rows = sorted(rows,key=lambda x: x[2],reverse=False)
+##
+##        #Sort by total average
+        print 'Sorted by total average'
+        rows = sorted(rows,key=lambda x: x[3],reverse=False)
+##
+##        #Sort by cum average
+##        print 'Sorted by cum average'
+##        rows = sorted(rows,key=lambda x: x[4],reverse=False)
+        
         print_table(headers,rows)
         return results
             
@@ -275,6 +294,7 @@ class Game:
 
 #If run, do the main loop
 if __name__ == '__main__':
+    #cls()
     g = Game()
-##    results = g.test_strats()
-    g.main()
+    results = g.test_strats()
+##    g.main()
